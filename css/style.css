@@ -1,0 +1,12 @@
+body {
+    background-color: #f3f3f3;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#table-content{
+    padding-top: 10px;
+    text-align: center;
+}
