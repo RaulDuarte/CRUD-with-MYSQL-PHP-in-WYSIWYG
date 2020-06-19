@@ -22,7 +22,7 @@ The detailed tutorial is available at:
 ## Directory Structure
 
 ```
-TinyMCE
+CRUD-with-MySQL-and-PHP-in-TinyMCE
 |   edit.php
 |   footer.php
 |   header.php
