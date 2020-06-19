@@ -12,7 +12,7 @@
 
                 $titleError = "
                 <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                <strong>Erro! O documento deve conter um título.</strong>
+                <strong>Error! The document must contain a title.</strong>
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
@@ -29,7 +29,7 @@
 
                 $contentError = "
                 <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                <strong>Erro! O documento está em branco.</strong>
+                <strong>Error! The document is blank.</strong>
                 <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                     <span aria-hidden='true'>&times;</span>
                 </button>
@@ -43,11 +43,11 @@
                 $query = "INSERT INTO container (title,content) VALUES ('$title', '$content')";
 
                 if(mysqli_query($link, $query)){
-                    header("Location: listar.php");
+                    header("Location: list.php");
                 }else{
                     $mysqlError = "
                     <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                    <strong>Erro ao Gravar no Banco de Dados</strong><br>".mysqli_error($link).
+                    <strong>Error writing to the database.</strong><br>".mysqli_error($link).
                     "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                         <span aria-hidden='true'>&times;</span>
                     </button></div>
@@ -63,7 +63,7 @@
 
     <div class="container">
         <?php if(isset($mysqlError)) echo $mysqlError; ?>
-        <h3 class="text-center">Adicionar Anotação</h3>
+        <h3 class="text-center">New Note</h3>
         <br>
         <div class="row">
             <div class="col-md-12">
@@ -72,7 +72,7 @@
 
                     <?php if(isset($titleError)) echo $titleError; ?>
 
-                    <label for="Título"><strong>Título</strong></label>
+                    <label for="Title"><strong>Title</strong></label>
                     <input class="form-control" name="titulo" type="text" value="<?php if(isset($title)) echo $title;?>">
 
                     <br>
@@ -89,7 +89,7 @@
 
                     <br>
 
-                    <button type="submit" name="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Save</button>
                 </form>
 
             </div>

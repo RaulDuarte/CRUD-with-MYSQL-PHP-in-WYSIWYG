@@ -16,7 +16,7 @@
 
                         echo "
                                 <div class='alert alert-danger alert-dismissible fade show' role='alert'>
-                                    <strong>Tem Certeza que Deseja Excluir a Anotação?</strong>
+                                    <strong>Are you sure you want to delete the note?</strong>
                                     <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                                         <span aria-hidden='true'>&times;</span>
                                     </button>
@@ -25,8 +25,8 @@
                                         <br>
                                         <div class='form-group'>
                                             <input type='hidden' name='confirmId' value='$anotId'>
-                                            <button type='submit' name='excluir' class='btn btn-danger'>Excluir</button> 
-                                            <button type='button' class='btn btn-success' data-dismiss='alert'>Cancelar</button>
+                                            <button type='submit' class='btn btn-danger'>Delete</button> 
+                                            <button type='button' class='btn btn-success' data-dismiss='alert'>Cancel</button>
                                         </div>
                                     </form>
                                 </div>
@@ -38,11 +38,11 @@
                         $query = "DELETE FROM container WHERE id=".$_POST['confirmId'];
 
                         if(mysqli_query($link, $query)){
-                            header("Location: listar.php");
+                            header("Location: list.php");
                         }else{
                             echo "
                                     <div class='alert alert-warning alert-dismissible fade show' role='alert'>
-                                        <strong>Erro ao tentar Excluir!</strong><br>".mysqli_error($link)."
+                                        <strong>Error trying to delete!</strong><br>".mysqli_error($link)."
                                         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
                                             <span aria-hidden='true'>&times;</span>
                                         </button>
@@ -59,17 +59,17 @@
         <div id="table-content">
             <div class="row">
                 <div class='col-md-12'>    
-                    <h3 class="text-center">Lista de Anotações</h3>
+                    <h3 class="text-center">Notes List</h3>
                     <br> 
                     <table class="table">   
                         <thead class="thead-dark">
                             <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Data de Criação</th>
-                            <th scope="col">Ver</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Excluir</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">View</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -92,9 +92,9 @@
                                                     <td>$id</th>
                                                     <td>$title</td>
                                                     <td>$date</td>
-                                                    <td><a href='mostrar.php?showId=$id'><button type='button' class='btn btn-info'><i class='fas fa-eye'></i></button></a></td>
-                                                    <td><a href='editar.php?updateId=$id'><button type='button' class='btn btn-success'><i class='fas fa-edit'></i></button></a></td>
-                                                    <td><a href='listar.php?deleteId=$id'><button name='delete' type='button' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button></a></td>
+                                                    <td><a href='view.php?showId=$id'><button type='button' class='btn btn-info'><i class='fas fa-eye'></i></button></a></td>
+                                                    <td><a href='edit.php?updateId=$id'><button type='button' class='btn btn-success'><i class='fas fa-edit'></i></button></a></td>
+                                                    <td><a href='list.php?deleteId=$id'><button name='delete' type='button' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button></a></td>
                                                 </tr>
                                         ";
                                     }
@@ -102,7 +102,7 @@
         
                                     echo "
                                             <tr>
-                                                <td colspan='6'>Nenhum Dado Encontrado</td>
+                                                <td colspan='6'>No Data Found</td>
                                             </tr>
                                     ";
                                 }

@@ -1,1 +1,1 @@
-<?php header("Location: listar.php") ?>
+<?php header("Location: list.php") ?>

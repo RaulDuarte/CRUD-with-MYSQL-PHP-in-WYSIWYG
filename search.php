@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-12">
 
-                <h3 class="text-center"> Buscar Anotação</h3>
+                <h3 class="text-center">Search Note</h3>
                 <br>
 
                 <form method="POST">
@@ -16,7 +16,7 @@
                         <input name="search" type="text" class="form-control">
                     </div>
     
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <button type="submit" class="btn btn-primary">Search</button>
                 </form>
                 
             </div>
@@ -30,11 +30,11 @@
                         <thead class="thead-dark">
                             <tr>
                             <th scope="col">ID</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Data de Criação</th>
-                            <th scope="col">Ver</th>
-                            <th scope="col">Editar</th>
-                            <th scope="col">Excluir</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">View</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -61,9 +61,9 @@
                                                         <td>$id</th>
                                                         <td>$title</td>
                                                         <td>$date</td>
-                                                        <td><a href='mostrar.php?showId=$id'><button type='button' class='btn btn-info'><i class='fas fa-eye'></i></button></a></td>
-                                                        <td><a href='editar.php?updateId=$id'><button type='button' class='btn btn-success'><i class='fas fa-edit'></i></button></a></td>
-                                                        <td><a href='listar.php?deleteId=$id'><button name='delete' type='button' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button></a></td>
+                                                        <td><a href='view.php?showId=$id'><button type='button' class='btn btn-info'><i class='fas fa-eye'></i></button></a></td>
+                                                        <td><a href='edit.php?updateId=$id'><button type='button' class='btn btn-success'><i class='fas fa-edit'></i></button></a></td>
+                                                        <td><a href='list.php?deleteId=$id'><button name='delete' type='button' class='btn btn-danger'><i class='fas fa-trash-alt'></i></button></a></td>
                                                     </tr>
                                             ";
                                         }
@@ -71,7 +71,7 @@
             
                                         echo "
                                                 <tr>
-                                                    <td colspan='6'>Nenhum Dado Encontrado</td>
+                                                    <td colspan='6'>No Data Found</td>
                                                 </tr>
                                         ";
                                     }

@@ -1,9 +1,9 @@
 <?php
 
     $servername = "localhost";
-    $username   = "username";
-    $password   = "password";
-    $database   = "database";
+    $username   = "tinymce";
+    $password   = "1234";
+    $database   = "db_tinymce";
 
     $link = mysqli_connect($servername, $username, $password, $database);
 

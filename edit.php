@@ -62,7 +62,7 @@
                 $query = "UPDATE container SET title='$title', content='$content' WHERE id=".$_GET['updateId'];
 
                 if(mysqli_query($link, $query)){
-                    header("Location: listar.php");
+                    header("Location: list.php");
                 }else{
                     $mysqlError = "
                     <div class='alert alert-warning alert-dismissible fade show' role='alert'>
@@ -91,7 +91,7 @@
 
                     <?php if(isset($titleError)) echo $titleError; ?>
 
-                    <label for="Título"><strong>Título</strong></label>
+                    <label for="Title"><strong>Title</strong></label>
                     <input class="form-control" name="titulo" type="text" value="<?php if(isset($title)) echo $title;?>">
 
                     <br>
@@ -108,7 +108,7 @@
 
                     <br>
 
-                    <button type="submit" name="submit" class="btn btn-primary">Salvar</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Save</button>
                 </form>
 
             </div>

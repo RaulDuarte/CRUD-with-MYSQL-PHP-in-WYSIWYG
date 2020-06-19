@@ -24,7 +24,7 @@
                                             <h5 class='card-header'>".$row['title']."</h5>
                                             <div class='card-body'>
                                             <p class='card-text'>".$row['content']."</p>
-                                            <a href='listar.php' class='btn btn-primary'>Voltar</a>
+                                            <a href='list.php' class='btn btn-primary'>Back</a>
                                             </div>
                                         </div>
                             ";
